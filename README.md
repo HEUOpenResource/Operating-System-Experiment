@@ -33,7 +33,7 @@
     printf("Hello Linux!\n\r");
 ```
 
-## 2.实验1实验环境的使用-任务2
+## 2. 实验1实验环境的使用-任务2
 
 ### ①修改文件：linuxapp.c
 
@@ -86,8 +86,8 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 .PHONY: all clean
 ```
-
-## 3.实验2操作系统的启动
+ 
+## 3. 实验2操作系统的启动
 
 ### ①修改文件：boot/setup.asm
 
@@ -122,8 +122,8 @@ next_step:
 ```C
 	printk("\n\n\nPartition table%s ok.\n\r",(NR_HD>1)?"s":"");
 ```
-
-## 4.实验5进程的创建-任务1
+ 
+## 4. 实验5进程的创建-任务1
 
 ### ①新增文件：main.c
 
@@ -150,8 +150,8 @@ int main(){
  return 0;
 }
 ```
-
-## 5.实验5进程的创建-任务2
+ 
+## 5. 实验5进程的创建-任务2
 
 ### ①新增文件：new.c
 
@@ -180,8 +180,8 @@ printf("PID:%d old process exit.\n", getpid());
 return 0; 
 } 
 ```
-
-## 6.实验8地址映射和内存共享-任务1
+ 
+## 6. 实验8地址映射和内存共享-任务1
 
 ### ①修改文件：include/linux/kernel.h
 
@@ -295,8 +295,8 @@ return 0;
 } 
 
 ```
-
-## 7.实验8地址映射和内存共享-任务2
+ 
+## 7. 实验8地址映射和内存共享-任务2
 
 ### ①新增文件：newapp/loop.c
 
@@ -313,8 +313,8 @@ return 0;
 }
 
 ```
-
-## 8.实验11proc文件系统的实现
+ 
+## 8. 实验11proc文件系统的实现
 
 ### ①修改文件：fs/namei.c
 
@@ -479,6 +479,6 @@ _syscall3(int,mknod,const char*,filename,mode_t,mode,dev_t,dev)
 	mkdir("/proc",0755); 
 	mknod("/proc/psinfo",S_IFPROC|0444,0); 
 ```
-
+ 
 # 五、StarHistory
 [![Star History Chart](https://api.star-history.com/svg?repos=only9464/Operating-System-Experiment&type=Date)](https://star-history.com/#only9464/Operating-System-Experiment&Date)
