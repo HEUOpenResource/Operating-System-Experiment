@@ -213,7 +213,7 @@ int dump_physical_mem(){
 
 ### ④修改文件：kernel/system_call.s
 
-第102行改为：
+第73行改为：
 
 ```assembly
 nr_system_calls = 88	# Linux 0.11 版内核中的系统调用总数。
