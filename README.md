@@ -2,15 +2,23 @@
 
 - [一、目录](#一目录)
 - [二、前言](#二前言)
-- [三、任务目录](#三任务目录)
-- [四、任务对应添加或者修改的文件](#四任务对应添加或者修改的文件)
-- [五、StarHistory](#五starhistory)
+- [三、主要文件](#三主要文件)
+- [四、任务目录](#三任务目录)
+- [五、任务对应添加或者修改的文件](#四任务对应添加或者修改的文件)
+- [六、StarHistory](#五starhistory)
 
 # 二、前言
 
-该仓库为**哈尔滨工程大学**计算机科学与技术学院2024~2025学年秋季课程——**操作系统**配套实验代码，配套平台为北京杰创永恒科技有限公司旗下的[云端课程体系建设平台](http://www.bj-jc.com.cn/)。该项目作者[only9464](https://github.com/only9464)精力和能力都有限，只整理对应的任务所要修改的文件及其对应的行数的代码，同时上传了实验教程、实验报告模板以及各个实验的要求，各位同志可以作为参考来完成自己的实验操作。若有谬误，请多多指教，欢迎提交issue或者发送邮件至**sky9464@qq.com**以[联系作者](mailto:sky9464@qq.com)。仅供参考，请勿抄袭()。
+该仓库为**哈尔滨工程大学**计算机科学与技术学院2024~2025学年秋季课程——**操作系统**配套实验代码，配套平台为北京杰创永恒科技有限公司旗下的[云端课程体系建设平台](http://www.bj-jc.com.cn/)。该项目作者[only9464](https://github.com/only9464)精力和能力都有限，只整理对应的任务所要修改的文件及其对应的行数的代码，同时上传了实验教程、实验报告模板以及各个实验的要求，各位同志可以作为参考来完成自己的实验操作。若有谬误，请多多指教，欢迎提交issue或者发送邮件至**sky9464@qq.com**以[联系作者](mailto:sky9464@qq.com)。仅供参考，请勿抄袭()。**注意：README.md中修改或者添加的代码均为最后提交的版本，中间版本暂时不予提供**
 
-# 三、任务目录
+# 三、主要文件
+ - [README.md](./README.md): 包含本仓库说明、最终修改的文件代码位置等
+ - [Linux内核实验教程_4.10.pdf](./Linux内核实验教程_4.10.pdf): 实验教程
+ - [学生包.zip](./学生包.zip): 部分实验所需要的写好的库文件 **ps:[点击下载](https://share.weiyun.com/25rA49QB)**
+ - `实验软件安装包` : [点击下载](https://share.weiyun.com/4acfD58r)
+ - `实验文档` : [点击下载](https://share.weiyun.com/Thn0GykT)
+ - `Linux操作系统实验介绍.mp4` : [点击下载](https://share.weiyun.com/zZraA1Pl)
+# 四、任务目录
 
 - [1. 实验1实验环境的使用-任务1](#1-实验1实验环境的使用-任务1)
 - [2. 实验1实验环境的使用-任务2](#2-实验1实验环境的使用-任务2)
@@ -21,7 +29,7 @@
 - [7. 实验8地址映射和内存共享-任务2](#7-实验8地址映射和内存共享-任务2)
 - [8. 实验11proc文件系统的实现](#8-实验11proc文件系统的实现)
 
-# 四、任务对应添加或者修改的文件
+# 五、任务对应添加或者修改的文件
 
 ## 1. 实验1实验环境的使用-任务1
 
@@ -437,7 +445,7 @@ int psread(int dev, char *buf, int count, off_t *f_pos) {
 extern int psread (int dev, char * buf, int count, off_t * f_pos); 
 ```
 
-第113行添加：
+第113行(printk调用)前添加：
 
 ```C
 	if(S_ISPROC(inode->i_mode)) 
@@ -480,5 +488,5 @@ _syscall3(int,mknod,const char*,filename,mode_t,mode,dev_t,dev)
 	mknod("/proc/psinfo",S_IFPROC|0444,0); 
 ```
  
-# 五、StarHistory
+# 六、StarHistory
 [![Star History Chart](https://api.star-history.com/svg?repos=only9464/Operating-System-Experiment&type=Date)](https://star-history.com/#only9464/Operating-System-Experiment&Date)
