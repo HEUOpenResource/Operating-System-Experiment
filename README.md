@@ -15,8 +15,8 @@
 
 **问题反馈：README.md中的代码总结可能不完善或者存在谬误，若你在参考的过程中坐牢了，可以看一下仓库中对应的文件的源代码，欢迎纠错与补充！**
 
-- 感谢 @MadLongTom 对 **实验8地址映射和内存共享-任务1 --> kernel/system_call.s** 的纠错（[#1](https://github.com/only9464/Operating-System-Experiment/pull/1)）
-- 感谢 @Erwwyh     对  **实验8地址映射和内存共享-任务1 --> include/linux/sys.h** 的补充（[#2](https://github.com/only9464/Operating-System-Experiment/issues/2)）
+- 感谢 [@MadLongTom](https://github.com/MadLongTom) 对 **实验8地址映射和内存共享-任务1 --> kernel/system_call.s** 的纠错（[#1](https://github.com/only9464/Operating-System-Experiment/pull/1)）
+- 感谢 [@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务1 --> include/linux/sys.h** 的补充（[#2](https://github.com/only9464/Operating-System-Experiment/issues/2)）
 
 # 三、主要文件
  - [README.md](./README.md): 包含本仓库说明、最终修改的文件代码位置等
