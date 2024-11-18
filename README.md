@@ -9,7 +9,14 @@
 
 # 二、前言
 
-该仓库为**哈尔滨工程大学**计算机科学与技术学院2024~2025学年秋季课程——**操作系统**配套实验代码，配套平台为北京杰创永恒科技有限公司旗下的[云端课程体系建设平台](http://www.bj-jc.com.cn/)。该项目作者[only9464](https://github.com/only9464)精力和能力都有限，只整理对应的任务所要修改的文件及其对应的行数的代码，同时上传了实验教程、实验报告模板以及各个实验的要求，各位同志可以作为参考来完成自己的实验操作。若有谬误，请多多指教，欢迎提交issue或者发送邮件至**sky9464@qq.com**以[联系作者](mailto:sky9464@qq.com)。仅供参考，请勿抄袭()。**注意：README.md中修改或者添加的代码均为最后提交的版本，中间版本暂时不予提供**
+该仓库为**哈尔滨工程大学**计算机科学与技术学院2024~2025学年秋季课程——**操作系统**配套实验代码，配套平台为北京杰创永恒科技有限公司旗下的[云端课程体系建设平台](http://www.bj-jc.com.cn/)。该项目作者[only9464](https://github.com/only9464)精力和能力都有限，只整理对应的任务所要修改的文件及其对应的行数的代码，同时上传了实验教程、实验报告模板以及各个实验的要求，各位同志可以作为参考来完成自己的实验操作。若有谬误，请多多指教，欢迎提交issue或者发送邮件至**sky9464@qq.com**以[联系作者](mailto:sky9464@qq.com)。仅供参考，请勿抄袭()。
+
+**注意：README.md中修改或者添加的代码均为最后提交的版本，中间版本暂时不予提供**
+
+**问题反馈：README.md中的代码总结可能不完善或者存在谬误，若你在参考的过程中坐牢了，可以看一下仓库中对应的文件的源代码，欢迎纠错与补充！**
+
+- 感谢 @MadLongTom 对 **实验8地址映射和内存共享-任务1 --> kernel/system_call.s** 的纠错（[#1](https://github.com/only9464/Operating-System-Experiment/pull/1)）
+- 感谢 @Erwwyh     对  **实验8地址映射和内存共享-任务1 --> include/linux/sys.h** 的补充（[#2](https://github.com/only9464/Operating-System-Experiment/issues/2)）
 
 # 三、主要文件
  - [README.md](./README.md): 包含本仓库说明、最终修改的文件代码位置等
@@ -199,7 +206,22 @@ return 0;
 int physical_mem();
 ```
 
-### ②修改文件：include/unistd.h
+### ②修改文件：/include/linux/sys.h
+
+第87行后添加：
+
+```C
+extern int dump_physical_mem();
+```
+
+第177行(sys_uselib所在行)改为：
+
+```C
+sys_uselib,			//86 
+dump_physical_mem  //87
+```
+
+### ③修改文件：include/unistd.h
 
 第162行添加：
 
@@ -207,7 +229,7 @@ int physical_mem();
 #define __NR_dump_physical_mem 87
 ```
 
-### ③修改文件：kernel/sys.c
+### ④修改文件：kernel/sys.c
 
 第353行添加：
 
@@ -219,7 +241,7 @@ int dump_physical_mem(){
 
 ```
 
-### ④修改文件：kernel/system_call.s
+### ⑤修改文件：kernel/system_call.s
 
 第73行改为：
 
@@ -227,7 +249,7 @@ int dump_physical_mem(){
 nr_system_calls = 88	# Linux 0.11 版内核中的系统调用总数。
 ```
 
-### ⑤修改文件：mm/memory.c
+### ⑥修改文件：mm/memory.c
 
 第817行添加：
 
@@ -289,7 +311,7 @@ int physical_mem()
 }
 ```
 
-### ⑥新增文件： newapp/main.c
+### ⑦新增文件： newapp/main.c
 
 ```C
 #define __LIBRARY__ 
