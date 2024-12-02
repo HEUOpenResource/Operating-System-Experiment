@@ -3,9 +3,9 @@
 - [一、目录](#一目录)
 - [二、前言](#二前言)
 - [三、主要文件](#三主要文件)
-- [四、任务目录](#三任务目录)
-- [五、任务对应添加或者修改的文件](#四任务对应添加或者修改的文件)
-- [六、StarHistory](#五starhistory)
+- [四、任务目录](#四任务目录)
+- [五、任务对应添加或者修改的文件](#五任务对应添加或者修改的文件)
+- [六、StarHistory](#六starhistory)
 
 # 二、前言
 
@@ -17,6 +17,7 @@
 
 - 感谢 [@MadLongTom](https://github.com/MadLongTom) 对 **实验8地址映射和内存共享-任务1 --> kernel/system_call.s** 的纠错（[#1](https://github.com/only9464/Operating-System-Experiment/pull/1)）
 - 感谢 [@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务1 --> include/linux/sys.h** 的补充（[#2](https://github.com/only9464/Operating-System-Experiment/issues/2)）
+- 感谢 [@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务2 --> newapp/loop.c** 的纠错（[#3](https://github.com/only9464/Operating-System-Experiment/issues/3)）
 
 # 三、主要文件
  - [README.md](./README.md): 包含本仓库说明、最终修改的文件代码位置等
@@ -332,16 +333,15 @@ return 0;
 
 ```C
 #include <stdio.h>
+int i = 0x12345678;
 int main(void)
 {
-int i = 0x12345678;
 printf("The logical/virtual address of i is 0x%08x\n", &i);
 fflush(stdout);
 while(i)
 ;
 return 0;
 }
-
 ```
  
 ## 8. 实验11proc文件系统的实现
