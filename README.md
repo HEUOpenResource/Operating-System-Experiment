@@ -17,7 +17,7 @@
 
 - 感谢 [@MadLongTom](https://github.com/MadLongTom) 对 **实验8地址映射和内存共享-任务1 --> kernel/system_call.s** 的纠错（[#1](https://github.com/only9464/Operating-System-Experiment/pull/1)）
 - 感谢 [@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务1 --> include/linux/sys.h** 的补充（[#2](https://github.com/only9464/Operating-System-Experiment/issues/2)）
-- 感谢 [@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务2 --> newapp/loop.c** 的纠错（[#3](https://github.com/only9464/Operating-System-Experiment/issues/3)）
+- 感谢 [@penguinway](https://github.com/penguinway)、[@Erwwyh](https://github.com/Erwwyh)     对  **实验8地址映射和内存共享-任务2 --> newapp/loop.c** 的**提醒**（[#4](https://github.com/only9464/Operating-System-Experiment/issues/4)、[#3](https://github.com/only9464/Operating-System-Experiment/issues/3)）
 
 # 三、主要文件
  - [README.md](./README.md): 包含本仓库说明、最终修改的文件代码位置等
@@ -26,6 +26,7 @@
  - `实验软件安装包` : [点击下载](https://share.weiyun.com/4acfD58r)
  - `实验文档` : [点击下载](https://share.weiyun.com/Thn0GykT)
  - `Linux操作系统实验介绍.mp4` : [点击下载](https://share.weiyun.com/zZraA1Pl)
+
 # 四、任务目录
 
 - [1. 实验1实验环境的使用-任务1](#1-实验1实验环境的使用-任务1)
@@ -239,7 +240,6 @@ int dump_physical_mem(){
   physical_mem();
   return 0;
 }
-
 ```
 
 ### ⑤修改文件：kernel/system_call.s
@@ -324,7 +324,6 @@ int main()
 dump_physical_mem(); 
 return 0; 
 } 
-
 ```
  
 ## 7. 实验8地址映射和内存共享-任务2
@@ -333,9 +332,9 @@ return 0;
 
 ```C
 #include <stdio.h>
-int i = 0x12345678;
 int main(void)
 {
+int i = 0x12345678;
 printf("The logical/virtual address of i is 0x%08x\n", &i);
 fflush(stdout);
 while(i)
