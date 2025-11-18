@@ -86,7 +86,7 @@ return 0;
 }
 ```
 
-### ④新增文件：newapp/add.h
+### ④新增文件：newapp/makefile
 
 ```makefile
 CC = gcc
